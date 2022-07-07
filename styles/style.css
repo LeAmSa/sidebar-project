@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
     --body-bg-color: #dce4e3;
@@ -6,4 +7,176 @@
     --light-green: #8ed7c6;
     --light-grey: #dce4e3;
     --text-color: #084236;
+}
+
+/*
+Conteúdo do sidebar:
+
+Logo    Menu-burguer
+
+Buscar
+Dashboard
+pets
+Clientes
+Vets
+Ajustes
+
+Vet user
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar a, .sidebar ul, .sidebar li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 1px solid red;
+    height: 100%;
+    width: 240px;
+    background-color: var(--green);
+    padding: 6px 14px;
+}
+
+.logo_content {
+    display: flex;
+    justify-content: space-between;
+    border: 1px dashed green;
+}
+
+.sidebar .logo_content .logo {
+    display: flex;
+    color: #fff;
+    height: 50px;
+    align-items: center;
+    /*border: 1px dashed blue;*/
+}
+
+.nav_list {
+    /*border: 1px dashed pink;*/
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.nav_list li:first-child {
+    position: relative;
+    padding: 7px 0;
+    /*border: 1px dashed yellow;*/    
+}
+
+
+.sidebar ul li input {
+    background-color: #fff;
+    background-image: url('../img/search.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position-x: 7px;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    padding-left: 52px;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.nav_list li a {
+    /*border: 1px dashed blue;*/
+    padding: 7px 0;
+    padding-left: 7px;
+    display: flex;
+    align-content: center;
+    gap: 20px;
+    border-radius: 8px;
+    color: var(--text-color);
+    transition: all .4s ease;
+}
+
+.sidebar ul li a:hover {
+    background: #fff;
+}
+
+.sidebar ul li a img {
+    border: 1px dashed white;
+    border-radius: 8px;
+}
+
+.sidebar .profile_content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    color: var(--text-color);
+    /*border: 1px dashed red;*/
+    background-color: rgb(67, 161, 130);
+}
+
+.profile {
+    position: relative;
+    padding: 17px 6px;
+    height: 100%;
+    /*border: 1px dashed blue;*/
+}
+
+.profile_details {
+    /*border: 1px dashed white;*/
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.name_job {
+    flex-grow: 1;
+}
+
+.profile_details #profile_photo {
+    width: 70px;
+    border-radius: 8px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.job {
+    font-size: 14px;
+}
+
+#log_out {
+    border-radius: 8px;
+    /*border: 1px dashed white;*/
+}
+
+.home_content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+.text {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 14px;
 }
