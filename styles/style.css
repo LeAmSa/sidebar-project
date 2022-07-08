@@ -49,9 +49,14 @@ body {
     left: 0;
     border: 1px solid red;
     height: 100%;
-    width: 240px;
+    width: 78px;
     background-color: var(--green);
     padding: 6px 14px;
+    transition: all .5s ease;
+}
+
+.sidebar.active {
+    width: 240px;
 }
 
 .logo_content {
@@ -65,7 +70,18 @@ body {
     color: #fff;
     height: 50px;
     align-items: center;
-    /*border: 1px dashed blue;*/
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+    border: 1px dashed blue;
+}
+
+.sidebar.active .logo_content .logo {
+    visibility: visible;
+    opacity: 1;
+    transition: all .5s ease;
+    
 }
 
 .nav_list {
@@ -75,19 +91,18 @@ body {
     margin-top: 20px;
 }
 
-.nav_list li:first-child {
-    position: relative;
-    padding: 7px 0;
-    /*border: 1px dashed yellow;*/    
+.btn-search {
+    position: absolute;
+    top: 92px;
+    transform: translateX(9px);
 }
-
 
 .sidebar ul li input {
     background-color: #fff;
-    background-image: url('../img/search.svg');
+    /*background-image: url('../img/search.svg');
     background-repeat: no-repeat;
     background-position: left center;
-    background-position-x: 7px;
+    background-position-x: 7px;*/
     width: 100%;
     height: 50px;
     border-radius: 8px;
@@ -110,6 +125,10 @@ body {
     transition: all .4s ease;
 }
 
+.links_name {
+    margin: auto 0;
+}
+
 .sidebar ul li a:hover {
     background: #fff;
 }
@@ -117,6 +136,34 @@ body {
 .sidebar ul li a img {
     border: 1px dashed white;
     border-radius: 8px;
+}
+
+.tooltip {
+    background: #fff;
+    color: var(--text-color);
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 3px 5px;
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar ul li:first-child .tooltip {
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    transition: all .5s ease;
+    opacity: 1;
+}
+
+
+.sidebar ul li:first-child:hover .tooltip{
+    position: absolute;
+    display: inline;
+    top: 87px;
+    transition: all .5s ease;
 }
 
 .sidebar .profile_content {
