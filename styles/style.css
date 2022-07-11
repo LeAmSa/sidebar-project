@@ -9,20 +9,7 @@
     --text-color: #084236;
 }
 
-/*
-Conteúdo do sidebar:
-
-Logo    Menu-burguer
-
-Buscar
-Dashboard
-pets
-Clientes
-Vets
-Ajustes
-
-Vet user
-*/
+/* GENERAL STYLES */
 
 * {
     margin: 0;
@@ -38,192 +25,243 @@ body {
     overflow: hidden;
 }
 
+
+/* SIDEBAR STYLES */
+
 .sidebar a, .sidebar ul, .sidebar li {
     list-style: none;
     text-decoration: none;
 }
 
 .sidebar {
+    /* border: 3px dashed pink; */
+    background-color: var(--green);
+    height: 100%;
+    width: 78px;
     position: fixed;
     top: 0;
     left: 0;
-    border: 1px solid red;
-    height: 100%;
-    width: 78px;
-    background-color: var(--green);
     padding: 6px 14px;
     transition: all .5s ease;
 }
 
 .sidebar.active {
     width: 240px;
+    transition: all .5s ease;
 }
 
-.logo_content {
-    display: flex;
-    justify-content: space-between;
-    border: 1px dashed green;
-}
 
-.sidebar .logo_content .logo {
-    display: flex;
-    color: #fff;
-    height: 50px;
-    align-items: center;
-    visibility: hidden;
+/* LOGO CONTENT STYLES */
+
+.logo {
+    /* border: 1px dashed blue; */
     opacity: 0;
     pointer-events: none;
+    height: 50px;
+    display: flex;
+    align-items: center;
     transition: all .5s ease;
-    border: 1px dashed blue;
 }
 
-.sidebar.active .logo_content .logo {
-    visibility: visible;
+.sidebar.active .logo {
     opacity: 1;
     transition: all .5s ease;
-    
 }
+
+#btn {
+    position: absolute;
+    right: 27px;
+    top: 19px;
+    transition: all .5s ease;
+}
+
+.sidebar.active #btn {
+    right: 14px;
+
+}
+
+/* NAVLIST STYLES */
 
 .nav_list {
-    /*border: 1px dashed pink;*/
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.btn-search {
+    /* border: 1px dashed blue; */
     position: absolute;
-    top: 92px;
-    transform: translateX(9px);
+    top: 100px;
+    width: 50px;
+    transition: all .5s ease;
 }
 
-.sidebar ul li input {
-    background-color: #fff;
-    /*background-image: url('../img/search.svg');
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-position-x: 7px;*/
-    width: 100%;
+.sidebar.active .nav_list {
+    width: 206px;
+}
+
+.nav_list li {
+    /* border: 1px dashed yellow; */
+    position: relative;
     height: 50px;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    padding-left: 52px;
-    font-size: 18px;
-    color: var(--text-color);
+    width: 100%;
+    /* margin: 0 5px; */
+    line-height: 50px;
 }
 
-.nav_list li a {
-    /*border: 1px dashed blue;*/
-    padding: 7px 0;
-    padding-left: 7px;
-    display: flex;
-    align-content: center;
-    gap: 20px;
-    border-radius: 8px;
+.nav_list a {
     color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+    padding-left: 13px;
     transition: all .4s ease;
 }
 
-.links_name {
-    margin: auto 0;
-}
-
-.sidebar ul li a:hover {
+.nav_list a:hover {
     background: #fff;
 }
 
-.sidebar ul li a img {
-    border: 1px dashed white;
-    border-radius: 8px;
+.nav_list img {
+    border-radius: 10px;
 }
 
-.tooltip {
+.nav_list li input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    outline: none;
+    border: none;
     background: #fff;
+    padding-left: 50px;
+    font-size: 16px;
     color: var(--text-color);
+}
+
+.nav_list .btn-search {
+    position: absolute;
+    z-index: 99;
+    top: 12px;
+    left: 13px;
+}
+
+.nav_list .tooltip {
+    position: absolute;
+    left: 100px;
+    opacity: 0;
+    width: 122px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
     box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 3px 5px;
     transition: 0s;
+    pointer-events: none;
+}
+
+.nav_list li:hover .tooltip {
+    left: 70px;
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+.sidebar.active .nav_list li:hover .tooltip {
     opacity: 0;
     pointer-events: none;
 }
 
-.sidebar ul li:first-child .tooltip {
-    display: none;
+.nav_list .links_name {
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
 }
 
-.sidebar ul li:hover .tooltip {
-    transition: all .5s ease;
+.sidebar.active .nav_list .links_name {
     opacity: 1;
-}
-
-
-.sidebar ul li:first-child:hover .tooltip{
-    position: absolute;
-    display: inline;
-    top: 87px;
     transition: all .5s ease;
 }
 
-.sidebar .profile_content {
+/* PROFILE CONTENT STYLES */
+
+.profile_content {
+    /* border: 1px dashed black; */
     position: absolute;
+    width: 100%;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 80px;
-    color: var(--text-color);
-    /*border: 1px dashed red;*/
-    background-color: rgb(67, 161, 130);
 }
 
 .profile {
     position: relative;
-    padding: 17px 6px;
-    height: 100%;
-    /*border: 1px dashed blue;*/
+    /* border: 1px dashed yellow; */
+    height: 80px;
+    padding: 10px 6px;
+    background: #09836a;
 }
 
 .profile_details {
-    /*border: 1px dashed white;*/
+    /* border: 1px dashed purple; */
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.name_job {
-    flex-grow: 1;
+    height: 60px;
+    align-items: center;
 }
 
 .profile_details #profile_photo {
-    width: 70px;
-    border-radius: 8px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all .5s ease;
 }
 
-.name {
+.sidebar.active .profile_details #profile_photo {
+    opacity: 1;
+}
+
+.profile_details .name_job {
+    margin-left: 10px;
+    opacity: 0;
+    transition: all .5s ease;
+    color: var(--text-color);
+}
+
+.sidebar.active .profile_details .name_job {
+    opacity: 1;
+}
+
+.profile_details .name_job .name {
     font-weight: 700;
-    font-size: 1.1em;
 }
 
-.job {
+.profile_details .name_job .job {
     font-size: 14px;
 }
 
-#log_out {
-    border-radius: 8px;
-    /*border: 1px dashed white;*/
+.profile #log_out {
+    position: absolute;
+    right: 27px;
+    height: 25px;
+    transition: all .5s ease;
 }
 
+.sidebar.active .profile #log_out {
+    right: 14px;
+}
+
+/* HOME CONTENT STYLES  */
 .home_content {
-    position: absolute;
     height: 100%;
-    width: calc(100% - 240px);
+    position: absolute;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all .5s ease;
+}
+
+.home_content.active {
+    width: calc(100%-240px);
     left: 240px;
 }
 
-.text {
-    font-size: 25px;
+.home_content .text {
+    font-size: 24px;
     font-weight: 700;
-    color: var(--text-color);
-    margin: 14px;
+    margin: 12px;
 }
+
