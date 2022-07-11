@@ -25,7 +25,6 @@ body {
     overflow: hidden;
 }
 
-
 /* SIDEBAR STYLES */
 
 .sidebar a, .sidebar ul, .sidebar li {
@@ -37,6 +36,7 @@ body {
     /* border: 3px dashed pink; */
     background-color: var(--green);
     height: 100%;
+    min-height: 486px;
     width: 78px;
     position: fixed;
     top: 0;
@@ -49,7 +49,6 @@ body {
     width: 240px;
     transition: all .5s ease;
 }
-
 
 /* LOGO CONTENT STYLES */
 
@@ -75,9 +74,12 @@ body {
     transition: all .5s ease;
 }
 
+#btn:hover {
+    cursor: pointer;
+}
+
 .sidebar.active #btn {
     right: 14px;
-
 }
 
 /* NAVLIST STYLES */
@@ -99,7 +101,6 @@ body {
     position: relative;
     height: 50px;
     width: 100%;
-    /* margin: 0 5px; */
     line-height: 50px;
 }
 
@@ -175,6 +176,7 @@ body {
 
 .sidebar.active .nav_list .links_name {
     opacity: 1;
+    pointer-events: auto;
     transition: all .5s ease;
 }
 
@@ -201,6 +203,11 @@ body {
     display: flex;
     height: 60px;
     align-items: center;
+    transition: all .5s ease;
+}
+
+.sidebar.active .profile_details {
+    background: none;
 }
 
 .profile_details #profile_photo {
@@ -236,13 +243,22 @@ body {
 
 .profile #log_out {
     position: absolute;
-    right: 27px;
-    height: 25px;
+    border-radius: 10px;
+    background: var(--light-green);
+    padding: 5px;
+    right: 25px;
+    height: 30px;
     transition: all .5s ease;
 }
 
+.profile #log_out:hover {
+    cursor: pointer;
+    
+} 
+
 .sidebar.active .profile #log_out {
     right: 14px;
+    background: none;
 }
 
 /* HOME CONTENT STYLES  */
@@ -264,4 +280,3 @@ body {
     font-weight: 700;
     margin: 12px;
 }
-
