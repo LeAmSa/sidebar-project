@@ -69,7 +69,10 @@ The objective was to develop a sidebar for a website dashboard example.
    ```sh
    cd sidebar-project
    ```
-3. Open `index.html`
+3. Open project in [Visual Studio Code](https://code.visualstudio.com/), for example
+	 ```sh
+   code .
+   ```
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
